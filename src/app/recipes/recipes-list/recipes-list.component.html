@@ -1,0 +1,7 @@
+<h4>Recipes List</h4>
+
+<app-recipes-item
+  *ngFor="let obj of recipes"
+  [recipe]="obj"
+  (recipeSelected)="onRecipeSelect(obj)"
+></app-recipes-item>

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-6">
+    <button class="btn btn-success btn-sm">Add Recipe</button>
+    <hr />
+    <app-recipes-list
+      (onRecipeChange)="selectedRecipe = $event"
+    ></app-recipes-list>
+  </div>
+  <div class="col-6">
+    <app-recipes-detail
+      *ngIf="selectedRecipe; else infoText"
+      [recipeDetails]="selectedRecipe"
+    ></app-recipes-detail>
+    <ng-template #infoText>Please select a recipe</ng-template>
+  </div>
+</div>
